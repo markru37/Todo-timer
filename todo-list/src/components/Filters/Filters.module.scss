@@ -1,0 +1,29 @@
+.filter {
+    padding: 100px 0;
+    &__complete {
+        padding: 15px;
+        background-color: #d9e8d8;
+        color: #2fb48c;
+        box-shadow: 0 0 3px #c1d9bf, 0 0 0 5px #f5f5f5eb;
+        font-size: 20px;
+        display: inline-flex;
+        border-radius: 30px;
+        color: #53aa89;
+        font-weight: 700;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+            background-color: #c1d9bf;
+            box-shadow: 0 0 3px #d9e8d8, 0 0 0 5px #f5f5f5eb;
+            transition: all 0.3s ease-in-out;
+        }
+    }
+    @media (max-width: 620px) {
+        padding: 60px 0;
+    }
+    @media (max-width: 500px) {
+        padding: 40px 0;
+    }
+    @media (max-width: 400px) {
+        padding: 25px 0;
+    }
+}

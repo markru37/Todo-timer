@@ -1,0 +1,15 @@
+.complete__title {
+    font-size: 35px;
+    margin-bottom: 40px;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    color: #398d6d;
+}
+.timer {
+    &__title {
+        color: #398d6d;
+        font-size: 42px;
+        letter-spacing: 0.1em;
+        font-weight: 700;
+    }
+}

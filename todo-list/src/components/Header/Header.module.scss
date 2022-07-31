@@ -1,0 +1,100 @@
+.header {
+    margin-bottom: 100px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.192);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &__logo__container {
+        display: flex;
+        align-items: center;
+
+        .header__logo {
+            width: 100px;
+            height: 100px;
+        }
+        .logo__title {
+            font-weight: 700;
+            line-height: 130%;
+            letter-spacing: 0.05em;
+            font-size: 40px;
+            margin-left: 30px;
+            color: #53aa89;
+        }
+        @media (max-width: 460px) {
+            .header__logo {
+                width: 80px;
+                height: 80px;
+            }
+            .logo__title {
+                font-size: 32px;
+                margin-left: 15px;
+            }
+        }
+        @media (max-width: 360px) {
+            .header__logo {
+                width: 60px;
+                height: 60px;
+            }
+            .logo__title {
+                font-size: 30px;
+                margin-left: 15px;
+            }
+        }
+    }
+    &__list {
+        margin-left: 100px;
+        display: flex;
+        .header__item {
+            &:not(:last-child) {
+                margin-right: 70px;
+            }
+            .header__link {
+                font-size: 20px;
+                line-height: 140%;
+                font-weight: 600;
+                transition: all 0.3s ease-in-out;
+                padding: 10px 20px;
+                border-radius: 40px;
+                color: #53aa89;
+                border: 1px solid rgba(0, 0, 0, 0.13);
+                &:hover {
+                    transition: all 0.3s ease-in-out;
+                    border-radius: 15px;
+                    color: rgb(121, 75, 75);
+                    border: 1px solid rgba(134, 55, 55, 0.13);
+                }
+            }
+        }
+        @media (max-width: 1100px) {
+            margin-left: 20px;
+        }
+        @media (max-width: 460px) {
+            .header__item {
+                &:not(:last-child) {
+                    margin-right: 30px;
+                }
+            }
+        }
+        @media (max-width: 360px) {
+            .header__item {
+                &:not(:last-child) {
+                    margin-right: 10px;
+                }
+                .header__link {
+                    padding: 10px 15px;
+                }
+            }
+        }
+    }
+    @media (max-width: 990px) {
+        flex-direction: column;
+        margin-bottom: 60px;
+        &__logo__container {
+            margin-bottom: 20px;
+        }
+        &__list {
+            padding-bottom: 40px;
+            margin-left: 0;
+        }
+    }
+}

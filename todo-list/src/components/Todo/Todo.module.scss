@@ -1,0 +1,237 @@
+.todo {
+    margin-bottom: 50px;
+    &__item__container {
+        box-shadow: 0 0 3px #c1d9bf, 0 0 0 5px #f5f5f5eb;
+        transition: 0.3s ease;
+        position: relative;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        border-radius: 15px;
+        padding: 20px 20px;
+        background-color: #b1c5a14d;
+        &:not(:last-child) {
+            margin-bottom: 30px;
+        }
+        .checkbox__container {
+            display: block;
+            position: relative;
+            cursor: pointer;
+            font-size: 25px;
+            user-select: none;
+            & .checkmark::after {
+                left: 0.45em;
+                top: 0.25em;
+                width: 0.25em;
+                height: 0.5em;
+                border: solid #f0f0f0;
+                border-width: 0 0.15em 0.15em 0;
+                transform: rotate(45deg);
+            }
+            & .checkbox__input:checked ~ .checkmark {
+                background: #0b3a20;
+            }
+            & .checkbox__input:checked ~ .checkmark:after {
+                display: block;
+            }
+            .checkbox__input {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+                height: 0;
+                width: 0;
+            }
+            .checkmark {
+                position: relative;
+                top: 0;
+                left: 0;
+                height: 1.3em;
+                width: 1.3em;
+                background: #3ec77c;
+                border-radius: 50px;
+                transition: all 0.7s;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    display: none;
+                }
+            }
+        }
+        .vertical__line {
+            position: absolute;
+            left: 50px;
+            width: 70px;
+            height: 2px;
+            background-color: rgb(62 199 124);
+            transform: rotate(90deg);
+            border: 1px solid #53aa89;
+        }
+
+        .todo__item__title {
+            margin-left: 50px;
+            font-size: 32px;
+            font-weight: 700;
+            color: #53aa89;
+            width: 1000px;
+            word-wrap: break-word;
+            @media (max-width: 1138px) {
+                width: 800px;
+            }
+            @media (max-width: 990px) {
+                width: 600px;
+            }
+            @media (max-width: 870px) {
+                width: 400px;
+            }
+            @media (max-width: 650px) {
+                width: 200px;
+            }
+            @media (max-width: 340px) {
+                width: 190px;
+            }
+        }
+        .delete__container {
+            .delete__circle {
+                position: absolute;
+                right: 13px;
+                width: 70px;
+                height: 70px;
+                border-radius: 50px;
+                border: 2px solid #53aa89;
+                top: 6px;
+                transition: all 0.3s ease-in-out;
+                &:hover {
+                    transition: all 0.3s ease-in-out;
+                    border: 2px solid #2c423a;
+                }
+                &:active {
+                    transition: all 0.3s ease-in-out;
+                    border: 2px solid #121816;
+                }
+            }
+            .delete__xmark {
+                &::before,
+                &::after {
+                    content: '';
+                    position: absolute;
+                    right: 27px;
+                    top: 41px;
+                    width: 40px;
+                    height: 3px;
+                    background-color: #53aa89;
+                    transition: all 0.3s ease-in-out;
+                }
+                &::before {
+                    transform: rotate(45deg);
+                }
+                &::after {
+                    transform: rotate(-45deg);
+                }
+                &:hover::before,
+                &:hover::after {
+                    transition: all 0.3s ease-in-out;
+                    background-color: #2c423a;
+                }
+                &:active::before,
+                &:active::after {
+                    transition: all 0.3s ease-in-out;
+                    background-color: #121816;
+                }
+            }
+            @media (max-width: 550px) {
+                .delete__xmark {
+                    &::before,
+                    &::after {
+                        right: 20px;
+                        width: 25px;
+                        top: 36px;
+                    }
+                }
+                .delete__circle {
+                    right: 10px;
+                    top: 15px;
+                    width: 45px;
+                    height: 45px;
+                }
+            }
+            @media (max-width: 470px) {
+                .delete__xmark {
+                    &::before,
+                    &::after {
+                        right: 8px;
+                        width: 20px;
+                    }
+                }
+                .delete__circle {
+                    width: 24px;
+                    height: 24px;
+                    top: 26px;
+                    right: 6px;
+                }
+            }
+        }
+        @media (max-width: 550px) {
+            .todo__item__title {
+                font-size: 20px;
+                margin-left: 35px;
+            }
+            .vertical__line {
+                left: 40px;
+            }
+        }
+        @media (max-width: 490px) {
+            .todo__item__title {
+                font-size: 20px;
+                margin-left: 10px;
+            }
+            .vertical__line {
+                display: none;
+            }
+        }
+        @media (max-width: 490px) {
+            .todo__item__title {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+.complete_task {
+    &:not(:last-child) {
+        margin-bottom: 40px;
+    }
+    .todo__item__container {
+        background-color: #6262624d;
+        .line__end__task {
+            transform: translateX(0%);
+            transition: all 0.6s ease-in-out;
+        }
+        .delete__xmark {
+            &::before,
+            &::after {
+                background-color: #4f7567;
+            }
+        }
+        .delete__circle {
+            border: 2px solid #4f7567;
+        }
+        .checkmark {
+            background-color: #4f7567;
+        }
+        .line {
+            border: 1px solid #4f7567;
+        }
+        .todo__item__title {
+            color: #4f7567;
+        }
+    }
+}
+.line__end__task {
+    position: absolute;
+    width: 100%;
+    left: -4px;
+    height: 3px;
+    background-color: #3a9e6c4d;
+    transform: translateX(-150%);
+    transition: all 0.6s ease-in-out;
+}

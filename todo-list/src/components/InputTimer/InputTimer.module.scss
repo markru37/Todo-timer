@@ -1,0 +1,101 @@
+.timer__input__container {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0px 100px 0;
+    .timer__title {
+        background-color: #d9e8d8;
+        color: #2fb48c;
+        box-shadow: 0 0 3px #c1d9bf, 0 0 0 5px #f5f5f5eb;
+        height: 70px;
+        font-size: 24px;
+        padding: 0 2rem 0 1rem;
+        border-radius: 8px 0 0 8px;
+        transition: 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+    }
+    .input__area {
+        height: 70px;
+        width: 250px;
+        font-size: 24px;
+        padding-left: 0.7rem;
+        border: 2px solid transparent;
+        outline: none;
+        background-color: #d9e8d8;
+        color: #2fb48c;
+        box-shadow: 0 0 3px #c1d9bf, 0 0 0 5px #f5f5f5eb;
+        &::placeholder {
+            color: rgba(71, 173, 105, 0.644);
+        }
+    }
+    .timer__symbol {
+        margin: 0 10px;
+        font-size: 24px;
+        color: #2fb48c;
+        display: flex;
+        align-items: center;
+    }
+    .button__add_time {
+        background-color: #d9e8d8;
+        color: #2fb48c;
+        box-shadow: 0 0 3px #c1d9bf, 0 0 0 5px #f5f5f5eb;
+        outline: 0;
+        border: 0;
+        height: 70px;
+        font-size: 24px;
+
+        padding: 0 1rem;
+        border-radius: 0px 8px 8px 0px;
+        transition: 0.3s ease;
+        &:hover {
+            background-color: #b3e0b2;
+            color: #36977a;
+            transition: 0.3s ease;
+        }
+        &:active {
+            background-color: #93a593;
+            color: #1c2f2a;
+            transition: 0.3s ease;
+        }
+    }
+    @media (max-width: 825px) {
+        .input__area {
+            width: 200px;
+        }
+    }
+    @media (max-width: 710px) {
+        .timer__title {
+            font-size: 18px;
+            text-align: center;
+        }
+        .button__add_time {
+            font-size: 18px;
+        }
+        margin-bottom: 50px;
+    }
+    @media (max-width: 670px) {
+        .timer__symbol {
+            display: none;
+        }
+    }
+    @media (max-width: 640px) {
+        .timer__title {
+            display: none;
+        }
+    }
+    @media (max-width: 520px) {
+        .input__area {
+            width: 120px;
+            font-size: 16px;
+        }
+        .button__add_time {
+            font-size: 14px;
+        }
+        margin-bottom: 30px;
+    }
+    @media (max-width: 340px) {
+        .input__area {
+            width: 100px;
+        }
+    }
+}
