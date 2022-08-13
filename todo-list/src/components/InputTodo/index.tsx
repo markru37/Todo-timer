@@ -6,20 +6,20 @@ import { todoSelector, setAddValue, changeFlag } from '../../redux/slices/todoSl
 import axios from 'axios'
 import qs from 'qs'
 
-const InputTodo = () => {
+const InputTodo: React.FC = () => {
     const dispatch = useDispatch()
 
     const [value, setValue] = React.useState('')
 
     const { addValue, flag } = useSelector(todoSelector)
 
-    const inputRef = React.useRef(null)
+    const inputRef = React.useRef<HTMLInputElement>(null)
 
-    const updAddValue = React.useCallback((string) => {
+    const updAddValue = React.useCallback((string: string) => {
         dispatch(setAddValue(string));
-    })
+    },[])
 
-    const onChangeInput = (event) => {
+    const onChangeInput = (event: any) => {
         setValue(event.target.value)
         updAddValue(event.target.value)
     }
@@ -40,7 +40,7 @@ const InputTodo = () => {
             });
 
         }
-        inputRef.current.focus();
+        inputRef.current?.focus();
         dispatch(setAddValue(''));
         setValue('')
     }

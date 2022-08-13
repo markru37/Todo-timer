@@ -2,7 +2,7 @@ import React from 'react'
 import classes from './Filters.module.scss'
 import { Link } from 'react-router-dom'
 
-const Filters = () => {
+const Filters: React.FC = () => {
 
     return (
         <div className={classes.filter}>
