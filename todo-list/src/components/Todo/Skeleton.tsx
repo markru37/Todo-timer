@@ -2,7 +2,7 @@ import React from "react"
 import ContentLoader from "react-content-loader"
 import classes from './Todo.module.scss'
 
-const Skeleton = (props) => (
+const Skeleton: React.FC = (props) => (
     <ContentLoader
         className={classes.todo}
         speed={2}

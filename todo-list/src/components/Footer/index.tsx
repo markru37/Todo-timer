@@ -4,7 +4,7 @@ import vk from '../../assets/img/vk.svg'
 import github from '../../assets/img/github.svg'
 import classes from './Footer.module.scss'
 
-const Footer = () => {
+const Footer: React.FC = () => {
     return (
         <div className={classes.footer}>
             <div className={classes.footer__title}>links me in the social networks</div>

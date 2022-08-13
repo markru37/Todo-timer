@@ -4,12 +4,18 @@ import { useSelector, useDispatch } from 'react-redux';
 import { todoSelector, changeFlag } from '../../redux/slices/todoSlice';
 import axios from 'axios';
 
+type TodoProps = {
+    id: string;
+    title: string;
+    complete: string;
+}
 
-const Todo = ({ id, title, complete }) => {
+
+const Todo: React.FC<TodoProps> = ({ id, title, complete }) => {
 
     const { flag } = useSelector(todoSelector);
     const dispatch = useDispatch()
-    const DropId = (id) => {
+    const DropId = (id: string) => {
         const headers = {
             Authorization: 'Bearer paperboy',
         };
@@ -22,7 +28,7 @@ const Todo = ({ id, title, complete }) => {
                 dispatch(changeFlag(!flag));
             });
     };
-    const ChangeComplete = (id) => {
+    const ChangeComplete = (id: string) => {
         axios
             .put(`https://62d7c31e49c87ff2af3c39ba.mockapi.io/todo/${id}`, {
                 complete: 'true',

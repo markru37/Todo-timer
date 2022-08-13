@@ -6,8 +6,8 @@ import { setTime } from '../../redux/slices/timerSlice';
 const InputTimer = () => {
     const dispatch = useDispatch()
 
-    const inputRefMinutes = React.useRef()
-    const inputRefSeconds = React.useRef()
+    const inputRefMinutes = React.useRef(null)
+    const inputRefSeconds = React.useRef(null)
 
     const [valueMinutes, setValueMinutes] = React.useState('')
     const [valueSeconds, setValueSeconds] = React.useState('')
@@ -38,7 +38,7 @@ const InputTimer = () => {
             <input ref={inputRefMinutes} value={valueMinutes} onChange={onChangeInputMinutes} placeholder="Минуты" type="text" className={classes.input__area} />
             <span className={classes.timer__symbol}>:</span>
             <input ref={inputRefSeconds} value={valueSeconds} onChange={onChangeInputSeconds} placeholder="Секунды" type="text" className={classes.input__area} />
-            <button onClick={onAddTime} className={classes.button__add_time} tabIndex="1">Добавить время</button>
+            <button onClick={onAddTime} className={classes.button__add_time}>Добавить время</button>
         </div>
     )
 }

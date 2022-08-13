@@ -13,7 +13,7 @@ const InputTodo = () => {
 
     const { addValue, flag } = useSelector(todoSelector)
 
-    const inputRef = React.useRef()
+    const inputRef = React.useRef(null)
 
     const updAddValue = React.useCallback((string) => {
         dispatch(setAddValue(string));

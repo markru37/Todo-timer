@@ -4,12 +4,17 @@ import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
 import { todoSelector, changeFlag } from '../../redux/slices/todoSlice';
 
+type TodosCompProps = {
+    id: string;
+    title: string;
+    complete: string;
+}
 
-const TodosComp = ({ id, title, complete }) => {
+const TodosComp: React.FC<TodosCompProps> = ({ id, title, complete }) => {
     const { flag } = useSelector(todoSelector);
     const dispatch = useDispatch()
 
-    const DropId = (id) => {
+    const DropId = (id: string) => {
         const headers = {
             'Authorization': 'Bearer paperboy'
         }
