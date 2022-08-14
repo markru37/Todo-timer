@@ -13,14 +13,14 @@ const InputTimer = () => {
     const [valueSeconds, setValueSeconds] = React.useState('')
 
 
-    const onChangeInputMinutes = (event) => {
-        if (event.target.value > 1000) event.target.value = 1000;
-        setValueMinutes(prev => /\d+/.test(Number(event.target.value)) ? event.target.value : prev)
+    const onChangeInputMinutes = (event: React.ChangeEvent<HTMLInputElement>) => {
+        if (Number(event.target.value) > 1000) event.target.value = "1000";
+        setValueMinutes(prev => /\d+/.test(event.target.value) ? event.target.value : prev)
     }
 
-    const onChangeInputSeconds = (event) => {
-        if (event.target.value > 60) event.target.value = 59;
-        setValueSeconds(prev => /\d+/.test(Number(event.target.value)) ? event.target.value : prev)
+    const onChangeInputSeconds = (event: React.ChangeEvent<HTMLInputElement>) => {
+        if (Number(event.target.value) > 60) event.target.value = "59";
+        setValueSeconds(prev => /\d+/.test(event.target.value) ? event.target.value : prev)
     }
 
     const onAddTime = () => {

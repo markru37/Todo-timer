@@ -3,13 +3,17 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setTime, setCounting } from '../../redux/slices/timerSlice';
 import classes from './Timer.module.scss'
 
-const Timer = ({ getPadTime }) => {
+type TimerProps = {
+    getPadTime: (time: number) => number;
+}
 
+const Timer: React.FC<TimerProps> = ({ getPadTime }) => {
+    // @ts-ignore
     const { time, counting } = useSelector(state => state.timerSlice)
     const dispatch = useDispatch()
 
-    const minutes = getPadTime(Math.floor(time / 60));
-    const seconds = getPadTime(time - minutes * 60);
+    const minutes: number = getPadTime(Math.floor(time / 60));
+    const seconds: number = getPadTime(time - minutes * 60);
 
     React.useEffect(() => {
         const interval = setInterval(() => {

@@ -19,7 +19,7 @@ const InputTodo: React.FC = () => {
         dispatch(setAddValue(string));
     },[])
 
-    const onChangeInput = (event: any) => {
+    const onChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
         setValue(event.target.value)
         updAddValue(event.target.value)
     }

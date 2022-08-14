@@ -4,12 +4,13 @@ import classes from './Pages.module.scss'
 import Skeleton from '../components/Todo/Skeleton'
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchTodo, todoSelector } from '../redux/slices/todoSlice';
-const CompleteTask = () => {
+const CompleteTask: React.FC = () => {
     const { status, todo, flag } = useSelector(todoSelector);
     const dispatch = useDispatch()
 
     const getTodos = async () => {
-        dispatch(fetchTodo("1"))
+        //@ts-ignore
+        dispatch(fetchTodo())
     }
     React.useEffect(() => {
         getTodos()

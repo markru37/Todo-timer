@@ -5,13 +5,14 @@ import Skeleton from '../components/Todo/Skeleton'
 import { useSelector, useDispatch } from 'react-redux'
 import { todoSelector, fetchTodo } from '../redux/slices/todoSlice';
 import InputTodo from '../components/InputTodo';
-const Home = () => {
+const Home: React.FC = () => {
     const { todo, flag, status } = useSelector(todoSelector);
     const dispatch = useDispatch()
 
 
     const getTodos = async () => {
-        dispatch(fetchTodo("1"))
+        //@ts-ignore
+        dispatch(fetchTodo())
     }
 
     React.useEffect(() => {

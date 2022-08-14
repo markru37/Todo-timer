@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-export const fetchTodo = createAsyncThunk('todo/fetchTodos', async (params, thunkAPI) => {
+export const fetchTodo = createAsyncThunk('todo/fetchTodos', async (params = '', thunkAPI) => {
     const { data } = await axios.get(`https://62d7c31e49c87ff2af3c39ba.mockapi.io/todo`);
     if (data.length === 0) {
         return thunkAPI.rejectWithValue('Todos is empty');
