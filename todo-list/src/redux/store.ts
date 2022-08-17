@@ -8,3 +8,5 @@ export const store = configureStore({
         timerSlice,
     },
 });
+
+export type RootState = ReturnType<typeof store.getState>

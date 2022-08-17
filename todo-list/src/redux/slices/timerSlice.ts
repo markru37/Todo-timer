@@ -1,6 +1,11 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-const initialState = {
+interface TimerSliceState {
+    time: number;
+    counting: boolean;
+}
+
+const initialState: TimerSliceState = {
     time: 0,
     counting: false,
 };
@@ -9,10 +14,10 @@ export const timerSlice = createSlice({
     name: 'timer',
     initialState,
     reducers: {
-        setTime(state, action) {
+        setTime(state, action: PayloadAction<number>) {
             state.time = action.payload;
         },
-        setCounting(state, action) {
+        setCounting(state, action: PayloadAction<boolean>) {
             state.counting = action.payload;
         },
     },

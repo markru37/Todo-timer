@@ -1,15 +1,26 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { RootState } from '../store';
 
-export const fetchTodo = createAsyncThunk('todo/fetchTodos', async (params = '', thunkAPI) => {
-    const { data } = await axios.get(`https://62d7c31e49c87ff2af3c39ba.mockapi.io/todo`);
-    if (data.length === 0) {
-        return thunkAPI.rejectWithValue('Todos is empty');
-    }
-    return thunkAPI.fulfillWithValue(data);
+export const fetchTodo = createAsyncThunk<Todo[]>('todo/fetchTodos', async () => {
+    const { data } = await axios.get<Todo[]>(`https://62d7c31e49c87ff2af3c39ba.mockapi.io/todo`);
+    return data;
 });
 
-const initialState = {
+type Todo = {
+    id: string;
+    title: string;
+    complete: string;
+}
+
+interface TodoSliceState {
+    todo: Todo[];
+    addValue: string;
+    flag: boolean;
+    status: 'loading' | 'success' | 'error';
+}
+
+const initialState: TodoSliceState = {
     todo: [],
     addValue: '',
     flag: true,
@@ -20,13 +31,13 @@ export const todoSlice = createSlice({
     name: 'todo',
     initialState,
     reducers: {
-        setItems(state, action) {
+        setItems(state, action: PayloadAction<Todo[]>) {
             state.todo = action.payload;
         },
-        setAddValue(state, action) {
+        setAddValue(state, action: PayloadAction<string>) {
             state.addValue = action.payload;
         },
-        changeFlag(state, action) {
+        changeFlag(state, action: PayloadAction<boolean>) {
             state.flag = action.payload;
         },
     },
@@ -46,7 +57,9 @@ export const todoSlice = createSlice({
     },
 });
 
+
+export const todoSelector = (state: RootState) => state.todoSlice;
+
 export const { setItems, setAddValue, changeFlag } = todoSlice.actions;
-export const todoSelector = (state) => state.todoSlice;
 
 export default todoSlice.reducer;
