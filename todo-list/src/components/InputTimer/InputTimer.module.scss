@@ -1,11 +1,13 @@
+@import '../../scss/variables.scss';
+
 .timer__input__container {
     display: flex;
     justify-content: center;
     margin: 50px 0px 100px 0;
     .timer__title {
-        background-color: #d9e8d8;
-        color: #2fb48c;
-        box-shadow: 0 0 3px #c1d9bf, 0 0 0 5px #f5f5f5eb;
+        background-color: $bc-beige;
+        color: $main-green;
+        box-shadow: 0 0 3px $boxshadow-lightwhite, 0 0 0 5px $boxshadow-beige;
         height: 70px;
         font-size: 24px;
         padding: 0 2rem 0 1rem;
@@ -21,24 +23,24 @@
         padding-left: 0.7rem;
         border: 2px solid transparent;
         outline: none;
-        background-color: #d9e8d8;
-        color: #2fb48c;
-        box-shadow: 0 0 3px #c1d9bf, 0 0 0 5px #f5f5f5eb;
+        background-color: $bc-beige;
+        color: $main-green;
+        box-shadow: 0 0 3px $boxshadow-lightwhite, 0 0 0 5px $boxshadow-beige;
         &::placeholder {
-            color: rgba(71, 173, 105, 0.644);
+            color: $dark-green;
         }
     }
     .timer__symbol {
         margin: 0 10px;
         font-size: 24px;
-        color: #2fb48c;
+        color: $main-green;
         display: flex;
         align-items: center;
     }
     .button__add_time {
-        background-color: #d9e8d8;
-        color: #2fb48c;
-        box-shadow: 0 0 3px #c1d9bf, 0 0 0 5px #f5f5f5eb;
+        background-color: $bc-beige;
+        color: $main-green;
+        box-shadow: 0 0 3px $boxshadow-lightwhite, 0 0 0 5px $boxshadow-beige;
         outline: 0;
         border: 0;
         height: 70px;
@@ -48,7 +50,7 @@
         border-radius: 0px 8px 8px 0px;
         transition: 0.3s ease;
         &:hover {
-            background-color: #b3e0b2;
+            background-color: $boxshadow-lightwhite;
             color: #36977a;
             transition: 0.3s ease;
         }

@@ -1,7 +1,11 @@
+@import '../../scss/variables.scss';
+
+$completed-style-color: #4f7567;
+
 .todo {
     margin-bottom: 50px;
     &__item__container {
-        box-shadow: 0 0 3px #c1d9bf, 0 0 0 5px #f5f5f5eb;
+        box-shadow: 0 0 3px $boxshadow-lightwhite, 0 0 0 5px $boxshadow-beige;
         transition: 0.3s ease;
         position: relative;
         display: flex;
@@ -64,14 +68,14 @@
             height: 2px;
             background-color: rgb(62 199 124);
             transform: rotate(90deg);
-            border: 1px solid #53aa89;
+            border: 1px solid $foreign-green;
         }
 
         .todo__item__title {
             margin-left: 50px;
             font-size: 32px;
             font-weight: 700;
-            color: #53aa89;
+            color: $foreign-green;
             width: 1000px;
             word-wrap: break-word;
             @media (max-width: 1138px) {
@@ -97,7 +101,7 @@
                 width: 70px;
                 height: 70px;
                 border-radius: 50px;
-                border: 2px solid #53aa89;
+                border: 2px solid $foreign-green;
                 top: 6px;
                 transition: all 0.3s ease-in-out;
                 &:hover {
@@ -118,7 +122,7 @@
                     top: 41px;
                     width: 40px;
                     height: 3px;
-                    background-color: #53aa89;
+                    background-color: $foreign-green;
                     transition: all 0.3s ease-in-out;
                 }
                 &::before {
@@ -209,20 +213,20 @@
         .delete__xmark {
             &::before,
             &::after {
-                background-color: #4f7567;
+                background-color: $completed-style-color;
             }
         }
         .delete__circle {
-            border: 2px solid #4f7567;
+            border: 2px solid $completed-style-color;
         }
         .checkmark {
-            background-color: #4f7567;
+            background-color: $completed-style-color;
         }
         .line {
-            border: 1px solid #4f7567;
+            border: 1px solid $completed-style-color;
         }
         .todo__item__title {
-            color: #4f7567;
+            color: $completed-style-color;
         }
     }
 }

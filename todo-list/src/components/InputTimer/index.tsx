@@ -1,10 +1,10 @@
 import React from 'react'
 import classes from './InputTimer.module.scss'
-import { useDispatch } from 'react-redux';
 import { setTime } from '../../redux/slices/timerSlice';
+import { useAppDispatch } from '../../redux/store';
 
 const InputTimer = () => {
-    const dispatch = useDispatch()
+    const dispatch = useAppDispatch()
 
     const inputRefMinutes = React.useRef(null)
     const inputRefSeconds = React.useRef(null)

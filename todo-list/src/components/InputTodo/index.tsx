@@ -1,13 +1,14 @@
 import React from 'react'
 import plus from '../../assets/img/plus.svg'
 import classes from './InputTodo.module.scss'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { todoSelector, setAddValue, changeFlag } from '../../redux/slices/todoSlice'
 import axios from 'axios'
 import qs from 'qs'
+import { useAppDispatch } from '../../redux/store'
 
 const InputTodo: React.FC = () => {
-    const dispatch = useDispatch()
+    const dispatch = useAppDispatch()
 
     const [value, setValue] = React.useState('')
 

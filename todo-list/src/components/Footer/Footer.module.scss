@@ -1,3 +1,5 @@
+@import '../../scss/variables.scss';
+
 .footer {
     border-top: 1px solid rgba(128, 128, 128, 0.192);
     &__title {
@@ -6,7 +8,7 @@
         letter-spacing: 0.1em;
         font-weight: 700;
         text-align: center;
-        color: #53aa89;
+        color: $foreign-green;
     }
     &_container {
         margin-top: 50px;

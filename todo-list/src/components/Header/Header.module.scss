@@ -1,3 +1,5 @@
+@import '../../scss/variables.scss';
+
 .header {
     margin-bottom: 100px;
     border-bottom: 1px solid rgba(128, 128, 128, 0.192);
@@ -18,7 +20,7 @@
             letter-spacing: 0.05em;
             font-size: 40px;
             margin-left: 30px;
-            color: #53aa89;
+            color: $foreign-green;
         }
         @media (max-width: 460px) {
             .header__logo {
@@ -55,7 +57,7 @@
                 transition: all 0.3s ease-in-out;
                 padding: 10px 20px;
                 border-radius: 40px;
-                color: #53aa89;
+                color: $foreign-green;
                 border: 1px solid rgba(0, 0, 0, 0.13);
                 &:hover {
                     transition: all 0.3s ease-in-out;

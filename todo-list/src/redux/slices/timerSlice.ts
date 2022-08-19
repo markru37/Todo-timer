@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { RootState } from '../store';
 
 interface TimerSliceState {
     time: number;
@@ -22,6 +23,7 @@ export const timerSlice = createSlice({
         },
     },
 });
+export const timerSelector = (state: RootState) => state.timerSlice;
 
 export const { setTime, setCounting } = timerSlice.actions;
 

@@ -4,6 +4,7 @@ import Home from './Pages/Home';
 import Footer from './components/Footer';
 import TimerPage from './Pages/TimerPage';
 import CompleteTask from './Pages/CompleteTask';
+import NotFound from './Pages/NotFound';
 import { Routes, Route } from 'react-router-dom';
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
                         <Route path="/" element={<Home />} />
                         <Route path="/complete" element={<CompleteTask />} />
                         <Route path="/timer" element={<TimerPage />} />
+                        <Route path="*" element={<NotFound />} />
                     </Routes>
                 </div>
                 <Footer />

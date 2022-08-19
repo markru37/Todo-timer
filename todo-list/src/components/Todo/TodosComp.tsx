@@ -1,18 +1,14 @@
 import React from 'react'
 import classes from './Todo.module.scss'
 import axios from 'axios';
-import { useSelector, useDispatch } from 'react-redux';
-import { todoSelector, changeFlag } from '../../redux/slices/todoSlice';
+import { useSelector } from 'react-redux';
+import { todoSelector, changeFlag, TypeTodo } from '../../redux/slices/todoSlice';
+import { useAppDispatch } from '../../redux/store';
 
-type TodosCompProps = {
-    id: string;
-    title: string;
-    complete: string;
-}
 
-const TodosComp: React.FC<TodosCompProps> = ({ id, title, complete }) => {
+const TodosComp: React.FC<TypeTodo> = ({ id, title, complete }) => {
     const { flag } = useSelector(todoSelector);
-    const dispatch = useDispatch()
+    const dispatch = useAppDispatch()
 
     const DropId = (id: string) => {
         const headers = {
