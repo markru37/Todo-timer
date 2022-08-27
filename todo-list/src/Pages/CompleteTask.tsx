@@ -1,10 +1,14 @@
 import React from 'react'
-import TodosComp from '../components/Todo/TodosComp';
 import classes from './Pages.module.scss'
+
+import TodosComp from '../components/Todo/TodosComp';
 import Skeleton from '../components/Todo/Skeleton'
+
 import { useSelector } from 'react-redux'
-import { fetchTodo, todoSelector } from '../redux/slices/todoSlice';
 import { useAppDispatch } from '../redux/store';
+
+import { todoSelector } from '../redux/slices/TodoSlice/selectors';
+import { fetchTodo } from '../redux/slices/TodoSlice/slice';
 
 
 const CompleteTask: React.FC = () => {

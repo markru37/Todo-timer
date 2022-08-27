@@ -1,28 +1,6 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { RootState } from '../store';
-
-
-
-export type TypeTodo = {
-    id: string;
-    title: string;
-    complete: string;
-}
-
-interface TodoSliceState {
-    todo: TypeTodo[];
-    addValue: string;
-    flag: boolean;
-    status: 'loading' | 'success' | 'error';
-}
-
-enum Status {
-    LOADING = 'loading',
-    SUCCESS = 'success',
-    ERROR = 'error'
-
-}
+import { TypeTodo, TodoSliceState, Status } from './types';
 
 export const fetchTodo = createAsyncThunk<TypeTodo[]>('todo/fetchTodos', async () => {
     const { data } = await axios.get<TypeTodo[]>(`https://62d7c31e49c87ff2af3c39ba.mockapi.io/todo`);
@@ -67,8 +45,6 @@ export const todoSlice = createSlice({
     }
 });
 
-
-export const todoSelector = (state: RootState) => state.todoSlice;
 
 export const { setItems, setAddValue, changeFlag } = todoSlice.actions;
 

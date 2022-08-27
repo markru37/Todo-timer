@@ -1,12 +1,16 @@
 import React from 'react'
+import classes from './Pages.module.scss'
+
+import { useAppDispatch } from '../redux/store';
+import { useSelector } from 'react-redux'
+
 import Todo from '../components/Todo';
 import Filters from '../components/Filters';
 import Skeleton from '../components/Todo/Skeleton'
-import { useSelector } from 'react-redux'
-import { todoSelector, fetchTodo } from '../redux/slices/todoSlice';
 import InputTodo from '../components/InputTodo';
-import { useAppDispatch } from '../redux/store';
-import classes from './Pages.module.scss'
+
+import { todoSelector } from '../redux/slices/TodoSlice/selectors';
+import { fetchTodo } from '../redux/slices/TodoSlice/slice';
 
 
 const Home: React.FC = () => {

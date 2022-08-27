@@ -1,8 +1,11 @@
 import React from 'react'
-import { useSelector } from 'react-redux';
-import { setTime, setCounting, timerSelector } from '../../redux/slices/timerSlice';
-import { useAppDispatch } from '../../redux/store';
 import classes from './Timer.module.scss'
+
+import { useSelector } from 'react-redux';
+import { useAppDispatch } from '../../redux/store';
+
+import { timerSelector } from '../../redux/slices/TimerSlice/selectors';
+import { setCounting, setTime } from '../../redux/slices/TimerSlice/slice';
 
 type TimerProps = {
     getPadTime: (time: number) => number;

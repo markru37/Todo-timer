@@ -1,11 +1,15 @@
 import React from 'react'
-import plus from '../../assets/img/plus.svg'
 import classes from './InputTodo.module.scss'
+
+import plus from '../../assets/img/plus.svg'
+
 import { useSelector } from 'react-redux'
-import { todoSelector, setAddValue, changeFlag } from '../../redux/slices/todoSlice'
 import axios from 'axios'
 import qs from 'qs'
 import { useAppDispatch } from '../../redux/store'
+
+import { todoSelector } from '../../redux/slices/TodoSlice/selectors'
+import { changeFlag, setAddValue } from '../../redux/slices/TodoSlice/slice'
 
 const InputTodo: React.FC = () => {
     const dispatch = useAppDispatch()

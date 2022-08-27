@@ -1,9 +1,14 @@
 import React from 'react'
 import classes from './Todo.module.scss'
-import axios from 'axios';
+
+
 import { useSelector } from 'react-redux';
-import { todoSelector, changeFlag, TypeTodo } from '../../redux/slices/todoSlice';
+import axios from 'axios';
 import { useAppDispatch } from '../../redux/store';
+
+import { todoSelector } from '../../redux/slices/TodoSlice/selectors';
+import { TypeTodo } from '../../redux/slices/TodoSlice/types';
+import { changeFlag } from '../../redux/slices/TodoSlice/slice';
 
 
 const TodosComp: React.FC<TypeTodo> = ({ id, title, complete }) => {

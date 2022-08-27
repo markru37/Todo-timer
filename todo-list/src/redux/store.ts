@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
-import todoSlice from './slices/todoSlice';
-import timerSlice from './slices/timerSlice';
+import todoSlice from './slices/TodoSlice/slice';
+import timerSlice from './slices/TimerSlice/slice';
 import { useDispatch } from 'react-redux';
 
 export const store = configureStore({
